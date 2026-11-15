@@ -23,6 +23,9 @@ with one small flower added, unasked.
 
 
 def main() -> None:
+    # The competition accepts 1 to 1,000 characters; fail loudly if a
+    # future edit of the poem ever breaks that rule.
+    assert 1 <= len(POEM) <= 1000, f"poem is {len(POEM)} characters"
     out_dir = "/output"
     try:
         os.makedirs(out_dir, exist_ok=True)
